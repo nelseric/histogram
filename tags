@@ -1,0 +1,42 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC=gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-Wall -ggdb$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS=$/;"	m
+LDLIBS	Makefile	/^LDLIBS=-lreadline$/;"	m
+OBJECTS	Makefile	/^OBJECTS=$(SOURCES:.c=.o)$/;"	m
+SOURCES	Makefile	/^SOURCES=main.c word_list.c freq_list.c histogram.c$/;"	m
+TARGET	Makefile	/^TARGET=wordhist$/;"	m
+_FREQ_LIST_H_	freq_list.h	2;"	d
+_HISTOGRAM_H_	histogram.h	2;"	d
+_WORDLIST_H_	word_list.h	2;"	d
+capacity	oldprogram.c	/^	int capacity;$/;"	m	struct:__anon2	file:
+capacity	word_list.h	/^	int capacity;$/;"	m	struct:__anon3
+cstring_cmp_asc	oldprogram.c	/^int cstring_cmp_asc(const void *a, const void *b) {$/;"	f
+cstring_cmp_asc	word_list.c	/^int cstring_cmp_asc(const void *a, const void *b) {$/;"	f
+cstring_cmp_desc	oldprogram.c	/^int cstring_cmp_desc(const void *a, const void *b) {$/;"	f
+freq_list	freq_list.h	/^} freq_list;$/;"	t	typeref:struct:__anon1
+frq	freq_list.h	/^    int *frq;$/;"	m	struct:__anon1
+list_add	oldprogram.c	/^void list_add(word_list *list, char *word) {$/;"	f
+list_add	word_list.c	/^void list_add(word_list *list, char *word) {$/;"	f
+list_free	oldprogram.c	/^void list_free(word_list *list) {$/;"	f
+list_free	word_list.c	/^void list_free(word_list *list) {$/;"	f
+list_init	oldprogram.c	/^void list_init(word_list *list) {$/;"	f
+list_init	word_list.c	/^void list_init(word_list *list) {$/;"	f
+list_sort	word_list.c	/^void list_sort(word_list *list) {$/;"	f
+main	main.c	/^int main(int argc, char **argv){$/;"	f
+main	oldprogram.c	/^int main(int argc, char *argv[]) {$/;"	f
+parse_string	oldprogram.c	/^void parse_string(word_list *list, char *string) {$/;"	f
+print_histogram	histogram.c	/^void print_histogram(char **labels, int *data){$/;"	f
+size	freq_list.h	/^    int size;$/;"	m	struct:__anon1
+size	oldprogram.c	/^	int size;$/;"	m	struct:__anon2	file:
+size	word_list.h	/^	int size;$/;"	m	struct:__anon3
+word_list	oldprogram.c	/^} word_list;$/;"	t	typeref:struct:__anon2	file:
+word_list	word_list.h	/^} word_list;$/;"	t	typeref:struct:__anon3
+wordlist	freq_list.h	/^    char **wordlist;$/;"	m	struct:__anon1
+wordlist	oldprogram.c	/^	char **wordlist;$/;"	m	struct:__anon2	file:
+wordlist	word_list.h	/^	char **wordlist;$/;"	m	struct:__anon3
