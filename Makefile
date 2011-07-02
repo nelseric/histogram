@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-Wall -ggdb -std=c99
-LDLIBS=-lreadline
+LDLIBS=-lreadline 
 LDFLAGS=
 
 SOURCES=main.c word_list.c freq_list.c histogram.c
