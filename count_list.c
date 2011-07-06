@@ -4,69 +4,64 @@
 
 void cl_init(count_list *list){
     list->size = 0;
-    list->capacity = CL_INITIAL_CAP;
-    list->list = malloc(sizeof(wcount) * capacity);
+    list->capacity = CL_INIT_CAP;
+    list->list = (wcount *)malloc(sizeof(wcount) * list->capacity);
 }
 
 void cl_add_word(count_list *list, char *word){
   
-    bool found = false;
+    char found = 0;
     for(int i = 0; i < list->size; i++){
-      wcount *c = list->list[i];
+      wcount *c = &list->list[i];
       if(strcmp(c->word, word) == 0){
-        found = true;
+        found = 1;
         c->count++;
       }
     }
-    if(!exists){
-      if(size < capacity){
-        list->list[size] =  malloc(sizeof(char) * strlen(word));
-        strcpy(list->list[size], word);
-        size++;
-      } else {
-        
-      }
+    if(!found){
+      wcount new;
+      new.word = malloc(sizeof(char) * strlen(word));
+      strcpy(new.word, word);
+      new.count = 1;
+      cl_add(list, new);
     } 
 
 }
 
-#ifdef NOT_DONE
-void cl_add(word_list *list, char *word) {
-  if (list->size < list->capacity) {
-    *(list->wordlist + list->size) =
-                    malloc(sizeof(char) * strlen(word));
-    strcpy(*(list->wordlist + list->size), (char*) word);
+void cl_add(count_list *list, wcount new) {
+    
+    if (list->size >= list->capacity) {
+    
+        list->capacity = (list->capacity * 3) / 2 + 10;
+        list->list = realloc(list->list, sizeof(wcount) * list->capacity);
+    
+    }
+    
+    list->list[list->size] = new;
     list->size++;
-  } else {
-    list->capacity = (list->capacity * 3) / 2 + 10;
-    list->wordlist
-        = realloc(list->wordlist, sizeof(char*) * list->capacity);
-
-    *(list->wordlist + list->size) = (char*) word;
-    list->size++;
-  }
-}
-#endif
-
-
-void cl_free(word_list *list) {
-
 }
 
 
-#ifdef SORTING
-int wcount_cmp(struct wcount *a, struct wcount *b){
-  const wcount **ia = (const char **) a;
-  const wcount **ib = (const char **) b;
-  return strcmp(*ia, *ib);
+void cl_free(count_list *list) {
+    for(int i = 0; i < list->size; i++){
+        free(list->list[i].word);
+    }
+    free(list->list);
 }
 
-void list_sort(count_list *list) {
-    qsort(list->wordlist, list->size, sizeof(wcount), wcount_cmp);
+
+int wc_cmp_asc(const void *a, const void *b) { 
+    const wcount *ia = (const wcount *)a;
+    const wcount *ib = (const wcount *)b;
+    return ia->count - ib->count;
 }
-#else
-void list_sort(count_list *list) {
-    //qsort(list->wordlist, list->size, sizeof(wcount), wcount_cmp);
+int wc_cmp_desc(const void *a, const void *b) { 
+    const wcount *ia = (const wcount *)a;
+    const wcount *ib = (const wcount *)b;
+    return ib->count - ia->count;
 }
-#endif
+
+void cl_sort(count_list *list, int cmp(const void *, const void *)) {
+    qsort(list->list, list->size, sizeof(wcount), cmp);
+}
 

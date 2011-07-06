@@ -6,48 +6,26 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 CC	Makefile	/^CC=gcc$/;"	m
 CFLAGS	Makefile	/^CFLAGS=-Wall -ggdb -std=c99$/;"	m
+CL_INITI	count_list.h	8;"	d
 LDFLAGS	Makefile	/^LDFLAGS=$/;"	m
 LDLIBS	Makefile	/^LDLIBS=-lreadline $/;"	m
 OBJECTS	Makefile	/^OBJECTS=$(SOURCES:.c=.o)$/;"	m
-SOURCES	Makefile	/^SOURCES=main.c word_list.c freq_list.c histogram.c$/;"	m
+SOURCES	Makefile	/^SOURCES=main.c count_list.c histogram.c$/;"	m
 TARGET	Makefile	/^TARGET=wordhist$/;"	m
 _COUNT_LIST_H_	count_list.h	2;"	d
-_FREQ_LIST_H_	freq_list.h	2;"	d
 _HISTOGRAM_H_	histogram.h	2;"	d
-_WORDLIST_H_	word_list.h	2;"	d
-add_word	count_list.c	/^void add_word(count_list *list, char *word){$/;"	f
-capacity	count_list.h	/^    int capacity;$/;"	m	struct:__anon4
-capacity	oldprogram.c	/^	int capacity;$/;"	m	struct:__anon2	file:
-capacity	word_list.h	/^	int capacity;$/;"	m	struct:__anon5
-count_init	count_list.c	/^void count_init(count_list *list){$/;"	f
-count_list	count_list.h	/^} count_list;$/;"	t	typeref:struct:__anon4
-counts	count_list.h	/^    int counts;$/;"	m	struct:__anon3
-cstring_cmp_asc	oldprogram.c	/^int cstring_cmp_asc(const void *a, const void *b) {$/;"	f
-cstring_cmp_asc	word_list.c	/^int cstring_cmp_asc(const void *a, const void *b) {$/;"	f
-cstring_cmp_desc	oldprogram.c	/^int cstring_cmp_desc(const void *a, const void *b) {$/;"	f
-freq_list	freq_list.h	/^} freq_list;$/;"	t	typeref:struct:__anon1
-frq	freq_list.h	/^    int *frq;$/;"	m	struct:__anon1
-list	count_list.h	/^    wcount list;$/;"	m	struct:__anon4
-list_add	oldprogram.c	/^void list_add(word_list *list, char *word) {$/;"	f
-list_add	word_list.c	/^void list_add(word_list *list, char *word) {$/;"	f
-list_free	oldprogram.c	/^void list_free(word_list *list) {$/;"	f
-list_free	word_list.c	/^void list_free(word_list *list) {$/;"	f
-list_init	oldprogram.c	/^void list_init(word_list *list) {$/;"	f
-list_init	word_list.c	/^void list_init(word_list *list) {$/;"	f
-list_sort	word_list.c	/^void list_sort(word_list *list) {$/;"	f
+capacity	count_list.h	/^    int capacity;$/;"	m	struct:__anon2
+cl_add	count_list.c	/^void cl_add(count_list *list, wcount new) {$/;"	f
+cl_add_word	count_list.c	/^void cl_add_word(count_list *list, char *word){$/;"	f
+cl_free	count_list.c	/^void cl_free(word_list *list) {$/;"	f
+cl_init	count_list.c	/^void cl_init(count_list *list){$/;"	f
+cl_sort	count_list.c	/^void cl_sort(count_list *list) {$/;"	f
+count	count_list.h	/^    int count;$/;"	m	struct:__anon1
+count_list	count_list.h	/^} count_list;$/;"	t	typeref:struct:__anon2
+list	count_list.h	/^    wcount list;$/;"	m	struct:__anon2
 main	main.c	/^int main(int argc, char **argv){$/;"	f
-main	oldprogram.c	/^int main(int argc, char *argv[]) {$/;"	f
-main	test_freq_list.c	/^int main(int argc, char **argv){$/;"	f
-parse_string	oldprogram.c	/^void parse_string(word_list *list, char *string) {$/;"	f
 print_histogra	histogram.c	/^void print_histogra(freq_list data){$/;"	f
-size	count_list.h	/^    int size;$/;"	m	struct:__anon4
-size	freq_list.h	/^    int size;$/;"	m	struct:__anon1
-size	oldprogram.c	/^	int size;$/;"	m	struct:__anon2	file:
-size	word_list.h	/^	int size;$/;"	m	struct:__anon5
-wcount	count_list.h	/^} wcount;$/;"	t	typeref:struct:__anon3
-word	count_list.h	/^    char * word;$/;"	m	struct:__anon3
-word_list	oldprogram.c	/^} word_list;$/;"	t	typeref:struct:__anon2	file:
-word_list	word_list.h	/^} word_list;$/;"	t	typeref:struct:__anon5
-wordlist	freq_list.h	/^    char **wordlist;$/;"	m	struct:__anon1
-wordlist	oldprogram.c	/^	char **wordlist;$/;"	m	struct:__anon2	file:
-wordlist	word_list.h	/^	char **wordlist;$/;"	m	struct:__anon5
+size	count_list.h	/^    int size;$/;"	m	struct:__anon2
+wc_cmp	count_list.c	/^int wc_cmp(const void *a, const void *b) { $/;"	f
+wcount	count_list.h	/^} wcount;$/;"	t	typeref:struct:__anon1
+word	count_list.h	/^    char * word;$/;"	m	struct:__anon1
