@@ -10,7 +10,7 @@ OBJECTS=$(SOURCES:.c=.o)
 TARGET=hist
 
 
-.PHONY : clean run test
+.PHONY : clean run
 
 all: $(TARGET)
 
@@ -21,8 +21,7 @@ $(TARGET): $(OBJECTS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 run: all
-	./$(TARGET)
-
+	./$(TARGET) < count_list.c
 clean:
 	rm $(OBJECTS) $(TARGET)
 
